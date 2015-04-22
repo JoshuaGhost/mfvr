@@ -10,7 +10,7 @@ class Euler_Intg(object):
 		self.x = np.linspace(x_start, x_end, p_num, endpoint=True)
 		self.dx=(float)(x_start+x_end)/(float)(p_num)
 		self.k = k
-		self.isastable = True
+		self.isastable = False
 		
 	def intg(self, y0):
 		pass
@@ -22,22 +22,16 @@ class Euler_Intg(object):
 		for i in range((self.y0_end-self.y0_start)*self.y0_step+1):
 			y0 =(float)(i)/(float)(y0_step)+(float)(y0_start)
 			self.y = [yt for yt in self.intg(y0)]
-
-	def astable_test(self, ynew, ynow):
-		if abs(ynew)>=abs(ynow):
-			return False
-		else:
-			return True
 			
 class Euler_Expl_Intg(Euler_Intg):
 
 	def __init__(self, x_start = 0, x_end = 10, p_num = 1000, k = 1):
 		super(Euler_Expl_Intg, self).__init__(x_start, x_end, p_num, k)
+		if self.dx*self.k < 0 and self.dx*self.k > -2:
+			self.isastable = True
 
 	def funct_eei(self, y):
-		ret = self.dx*self.k*y+y
-		self.isastable = self.astable_test(ret, y)
-		return ret
+		return self.dx*self.k*y+y
 
 	def intg(self, y0):
 		y = y0
@@ -49,11 +43,11 @@ class Euler_Impl_Intg(Euler_Intg):
 	
 	def __init__(self, x_start = 0, x_end = 10, p_num = 1000, k = 1):
 		super(Euler_Impl_Intg, self).__init__(x_start, x_end, p_num, k)
+		if self.dx*self.k > 2 or self.dx*self.k < 0:
+			self.isastable = True
 		
 	def funct_eii(self, y):
-		ret = y/(1.0-self.dx*self.k)
-		self.isastable = self.astable_test(ret, y)
-		return ret
+		return y/(1.0-self.dx*self.k)
 
 	def intg(self, y0):
 		y = y0
