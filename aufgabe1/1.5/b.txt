@@ -1,0 +1,3 @@
+Ein A-stabilitätstest wird so durchgeführt, ob |1-dx*k|<1 wird geprüft. Weil anhand der DGL(y'=ky) der Euler-explizite-Intergrator yi=(1+k*dx)^n ist. Sei |1-dx*k|<1, hat der Intergrator einen Grenzwert 0. 
+
+Aber ein A-stabilitätstest kann nicht aussagen, ob ein Intergrator eine Grafik hat, die wie die analytische Expression aussieht.
