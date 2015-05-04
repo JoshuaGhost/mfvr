@@ -1,0 +1,3 @@
+The programm dump.py is to dump the position of all the particles into two json files named dumpx.new.json and dumpy.new.json. All of the configurations like gravity, distance of paricles, mass of particles etc. can be setted in dump.py. The process of generation may take a 'little' while. So I have already dumped two json files: dumpx.json and dumpy.json.
+
+The programm load.py can run a simulation of particles by loading those two exist json files (i.e. dumpx.json and dumpy.json).

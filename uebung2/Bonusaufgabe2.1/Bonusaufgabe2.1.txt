@@ -1,0 +1,1 @@
+Ich habe ein Demo vom Spiel Bridge Builder gefunden. Wie auf der Grafik gezeigt werden, habe ich zuerst einen Rahmen gebaut um die ganze Struktur zu stützen. Darunter wird ein Stahl-connector gehangen, das kann sich als eine Pendel bewegen und schwingen. Das Stahl-connector kann als eine Federmodell betrachtet werden

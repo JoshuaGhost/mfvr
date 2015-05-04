@@ -101,7 +101,7 @@ for x, y in wd.step(time):
 	ys.append(map(int, y.transpose()[0].tolist()))
 
 
-with open("dumpx.json", "w") as df:
+with open("dumpx.new.json", "w") as df:
 	json.dump(xs, df)
-with open("dumpy.json", "w") as df:
+with open("dumpy.new.json", "w") as df:
 	json.dump(ys, df)
