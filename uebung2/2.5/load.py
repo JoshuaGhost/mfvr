@@ -43,8 +43,3 @@ class Game(object):
 pygame.init()
 screen = pygame.display.set_mode((1366,768))
 Game().main(screen)
-'''
-pygame.draw.rect(screen,
-									[0,0,0],
-									[int(xs[i][j])+offset_x, int(ys[i][j])+offset_y, 2, 2],
-									1)'''

@@ -1,1 +1,7 @@
-Ich habe ein Demo vom Spiel Bridge Builder gefunden. Wie auf der Grafik gezeigt werden, habe ich zuerst einen Rahmen gebaut um die ganze Struktur zu stützen. Darunter wird ein Stahl-connector gehangen, das kann sich als eine Pendel bewegen und schwingen. Das Stahl-connector kann als eine Federmodell betrachtet werden
+Der Simulator könnte aus zwei Phasen bestehen, d.h. Entwurfphase(oder Aufstellungsphase) und Durchlaufphase.
+
+Bei Aufstellungsphase kann man auf dem Bedingungsfeld den Typ der Arme (z.B. ein Faden oder ein Stäbchen) wählen, Umweltvariablen(oder Einstellungsvariablen) wie Intensität der Schwerkraft, der Luftdämpfung aufstellen. Initiale Neigungswinkel und Länge der Arme kann man durch Mausziehen kleiner Kugel aufstellen.
+
+Nach dem Aufstellung kann es in die Durchlaufphase eingehen. Die Pendel könnte dann sich bewegen, und sich verhalten wie man zuvor aufgestellt hat. Die Position der Kugel auf Jedem Bild kann durch Intergrationsverfahren mit Parameters von Aufstellungsphase ausgerechnet und dann gezeichnet werden.
+
+Man kann noch mehre Pendelarmen miteinander verbinden, um Doppelpendel usw. zu implementieren. Auch die Pendelarmen von anderen Pendel kann mit Maus aufgestellt werden.
