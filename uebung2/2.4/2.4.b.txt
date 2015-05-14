@@ -2,6 +2,8 @@ b) Unter lokalen Fehler versteht man der Unterschied zwischen Iterationslösung 
 
 Globale Fehler bedeutet den Fehler zwischen f(n) und f(t), wenn Startwert f(n0) angegeben wird und gleich wie f(t0) ist. Es kann als eine Akkumulation der lokalen Fehlers erachtet werden
 
+Der Exponent der Konvergenzrate ist gleich wie der Exponent des globalen Fehlers, und ist der Exponent des lokalen Fehlers - 1.
+
 Lokaler Fehler des expliziten Euler Verfahrens:
 
 y1 = y0 + dt * f(t0, y0) (expliziten Euler Verfahren)
