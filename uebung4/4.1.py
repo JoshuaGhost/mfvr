@@ -15,6 +15,8 @@ delta_t = 0.01
 wavespeed = 4.0
 delta_x = 1.0
 
+daempfung = 0.999 
+
 waveseq = []
 for i in range(wavelen+1):
     waveseq.append(waveheight*sin(i*pi/wavelen))
@@ -34,7 +36,7 @@ class Game(object):
                    (h[i-1]-2*h[i]+h[i+1])
         
         for i in range(1, poolwidth+1):
-            h[i] = level+(h[i]+delta_t*v[i]-level)*(0.999)
+            h[i] = level+(h[i]+delta_t*v[i]-level)*(daempfung)
         return h, v
         
     def setwave(self, h, center):
@@ -72,9 +74,9 @@ class Game(object):
                 try:
                     pygame.draw.rect(screen, (0,0,255),\
                                      (offset_x+i*bar_width,\
-                                      offset_y-int(h[i]),\
+                                      offset_y-int(h[i] if h[i]>0 else 0),\
                                       bar_width,\
-                                      int(h[i])),\
+                                      int(h[i] if h[i]>0 else 0)),\
                                      0)
                 except Exception, e:
                     print i, ' ', h[i]

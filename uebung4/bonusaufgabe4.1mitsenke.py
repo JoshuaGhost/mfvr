@@ -15,9 +15,22 @@ delta_x = float(dom_len)/float(temp_len)
 
 dirc = ((-1,0),(1,0),(0,1),(0,-1))
 
-palette = [(p, 0, 255-p) for p in range(256)]
+deg_color = 4096
+def set_palette(degree):
+    pallete = [(0,0,0)]*degree
+    for i in range(degree):
+        b = int(cos(0.9*i*pi/degree)*255.0)
+        b = b if b > 0 else 0
+        g = int(cos(0.9*(i*pi/degree - pi/2))*255.0)
+        g = g if g > 0 else 0
+        r = int(cos(0.9*(i*pi/degree - pi))*255.0)
+        r = r if r > 0 else 0
+        pallete[i] = (r, g, b)
+    return pallete
 
-env_temp = 11.0
+palette = set_palette(deg_color)
+
+env_temp = -11.0
 
 class Game(object):
     def __intgrt__(self, temp, v):
@@ -27,7 +40,7 @@ class Game(object):
             temp[i][0] = temp[i][1]
             temp[temp_len+1][i] = temp[temp_len][i]
             temp[i][temp_len+1] = temp[i][temp_len]
-        temp[temp_len/2][temp_len+1] = 11.0
+        temp[temp_len/2][0] = -11.0
         
         for i in range(1, temp_len+1):
             for j in range(1, temp_len+1):
@@ -40,7 +53,7 @@ class Game(object):
         for i in range(1, temp_len+1):
             for j in range(1, temp_len+1):
                 t = temp[i][j]+delta_t*v[i][j]
-                temp[i][j] = t if t<=env_temp else env_temp
+                temp[i][j] = t if t>=env_temp else env_temp
         return temp, v
      
     def main(self, screen):
@@ -64,7 +77,7 @@ class Game(object):
             for i in range(1, temp_len+1):
                 for j in range(1, temp_len+1):
                     try:
-                        pygame.draw.rect(screen, palette[int((temp[i][j]+11.0)/22.0*255)],\
+                        pygame.draw.rect(screen, palette[int((temp[i][j]+11.0)/22.0*(deg_color-1))],\
                                      (offset_x+(i-1)*grid_len,\
                                       offset_y+(j-1)*grid_len,\
                                       grid_len,\

@@ -1,0 +1,3 @@
+1.Bei Berechnung physikalischer Interaktionen bennötigt man Berechnung gegenseitigen Aktionen zwischen Körper. Laut Newton'schen 3rd Gesetze tretten die Kräfte immer paarweise auf. Übt ein Körper A auf einen anderen Körper B eine Kraft aus (actio), so wirkt eine gleich große, aber entgegen gerichtete Kraft von Körper B auf Körper A (reactio). Dann kann man einfach mit gegenseitigen Aktionen beschäftigen
+
+2.Laut Newton'schen 2nd Gesetze ist a=f/m. Jeder Körper besitzt unterschiedliche Masse. Deshalb kann Kräfte, die größe gleich sind, Beschleunigungen, die größe unterschiedlich sind, bewirken. So ist es schwer zu speichern und berechnen
